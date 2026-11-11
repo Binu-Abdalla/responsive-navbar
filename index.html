@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Navbar</title>
+</head>
+<body>
+    <nav>
+    <div class="nav-logo"><a href="#"><img src="Materials/logo.svg" alt=""></a></div>
+    <button class="menu hide-desktop" aria-controls="primary-links"  aria-expanded="false" type="button"><img src="Materials/menu.svg" > </button>
+        <ul class="hide-mobile nav-links" id="primary-links" >
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-button hide-mobile"><a href="#">Get Started</a></div>
+    </nav>
+
+<script>
+const menuButton = document.querySelector(".menu");
+const navigation = document.querySelector("#primary-links");
+
+menuButton.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  const nextIsOpen = !isOpen;
+
+menuButton.setAttribute("aria-expanded", String(nextIsOpen));
+navigation.classList.toggle("is-open", nextIsOpen);
+
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>
